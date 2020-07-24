@@ -5,11 +5,14 @@ Plug 'romainl/apprentice'
 Plug 'jiangmiao/auto-pairs'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'udalov/kotlin-vim'
+Plug 'sheerun/vim-polyglot'
 call plug#end()
 
 syntax on
 set encoding=utf-8
 set noerrorbells
+set tabstop=2 softtabstop=2
+set shiftwidth=2
 set nu
 set nowrap
 set smartcase
@@ -43,6 +46,8 @@ set cmdheight=2
 set updatetime=300
 set shortmess+=c
 
+inoremap <silent><expr> <c-space> coc#refresh()
+
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
@@ -52,3 +57,9 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 nmap <leader>rn <Plug>(coc-rename)
 xmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
+
+let g:coc_user_config="$HOME/.config/nvim/coc-settings.json"
