@@ -9,6 +9,8 @@ Plug 'sheerun/vim-polyglot'
 Plug 'google/vim-maktaba'
 Plug 'google/vim-codefmt'
 Plug 'google/vim-glaive'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 call plug#end()
 
 syntax on
@@ -51,6 +53,7 @@ set shortmess+=c
 
 inoremap <silent><expr> <c-space> coc#refresh()
 
+nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
@@ -66,6 +69,9 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
 let g:coc_user_config="$HOME/.config/nvim/coc-settings.json"
+
+"fzf configs
+nnoremap <C-p> :GFiles<CR>
 
 "vim-fmt autoconfigs
 "Glaive codefmt google_java_executable="java -jar ~/.config/nvim/google-java-format/google-java-format-1.9-SNAPSHOT-all-deps.jar"
