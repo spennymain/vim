@@ -6,9 +6,6 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'udalov/kotlin-vim'
 Plug 'sheerun/vim-polyglot'
-Plug 'google/vim-maktaba'
-Plug 'google/vim-codefmt'
-Plug 'google/vim-glaive'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 call plug#end()
@@ -73,17 +70,3 @@ let g:coc_user_config="$HOME/.config/nvim/coc-settings.json"
 "fzf configs
 nnoremap <C-p> :GFiles<CR>
 
-"vim-fmt autoconfigs
-"Glaive codefmt google_java_executable="java -jar ~/.config/nvim/google-java-format/google-java-format-1.9-SNAPSHOT-all-deps.jar"
-augroup autoformat_settings
-autocmd FileType bzl AutoFormatBuffer buildifier
-autocmd FileType c,cpp,proto,javascript,arduino AutoFormatBuffer clang-format
-autocmd FileType dart AutoFormatBuffer dartfmt
-autocmd FileType go AutoFormatBuffer gofmt
-autocmd FileType gn AutoFormatBuffer gn
-autocmd FileType html,css,sass,scss,less,json AutoFormatBuffer js-beautify
-autocmd FileType java AutoFormatBuffer google-java-format
-autocmd FileType python AutoFormatBuffer autopep8
-autocmd FileType rust AutoFormatBuffer rustfmt
-autocmd FileType vue AutoFormatBuffer prettier
-augroup END
