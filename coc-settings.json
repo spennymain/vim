@@ -4,5 +4,11 @@
       "command": "$HOME/.config/nvim/kotlin-language-server/server/build/install/server/bin/kotlin-language-server",
       "filetypes": ["kotlin"]
     }
-  }
+  },
+	"yaml.format.enable": true,
+	"yaml.trace.server": "verbose",
+	"yaml.schemas": {
+		"kubernetes": "/*.yaml"
+	},
+	"python.jediEnabled": false
 }

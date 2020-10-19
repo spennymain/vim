@@ -70,3 +70,8 @@ let g:coc_user_config="$HOME/.config/nvim/coc-settings.json"
 "fzf configs
 nnoremap <C-p> :GFiles<CR>
 
+augroup filetype_Docker
+	" Delete any preconfigured commands
+	autocmd!
+	autocmd FileType Dockerfile setlocal tabstop=4 shiftwidth=4
+augroup end
