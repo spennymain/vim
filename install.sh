@@ -15,10 +15,12 @@ sudo apt-get install neovim
 echo "folder not present...creating it if you let me"
 mkdir -p $DIR_NVIM
 
-cp init.vim coc-settings.json $DIR_NVIM/
-source $DIR_NVIM/init.vim
-nvim -c ":normal PlugInstall"
-# head inside nvim to configure % 
+cp "${1:-init.vim}" coc-settings.json $DIR_NVIM/
+source $DIR_NVIM/"${1:-init.vim}"
 
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+
+nvim -c ":normal PlugInstall"
+
+

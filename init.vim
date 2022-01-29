@@ -66,7 +66,7 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
 let g:coc_user_config="$HOME/.config/nvim/coc-settings.json"
-
+let g:coc_disable_startup_warning = 1
 "fzf configs
 nnoremap <C-p> :GFiles<CR>
 
@@ -75,3 +75,6 @@ augroup filetype_Docker
 	autocmd!
 	autocmd FileType Dockerfile setlocal tabstop=4 shiftwidth=4
 augroup end
+
+set cc=
+hi Normal guibg=NONE ctermbg=NONE
