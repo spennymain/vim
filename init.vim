@@ -31,6 +31,7 @@ let g:netrw_banner = 0
 let g:netrw_winsize = 25
 
 let mapleader = " "
+nnoremap <leader>w :w<CR>
 nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>l :wincmd l<CR>
 nnoremap <leader>j :wincmd j<CR>
