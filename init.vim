@@ -4,8 +4,9 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'romainl/apprentice'
 Plug 'jiangmiao/auto-pairs'
 Plug 'udalov/kotlin-vim'
-Plug 'sheerun/vim-polyglot'
+Plug 'neovim/nvim-lspconfig'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 call plug#end()
 
 syntax on
@@ -29,6 +30,7 @@ let g:airline_theme='deus'
 let g:netrw_browser_split = 2 
 let g:netrw_banner = 0
 let g:netrw_winsize = 25
+colorscheme apprentice
 
 let mapleader = " "
 nnoremap <leader>w :w<CR>
@@ -36,18 +38,10 @@ nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>l :wincmd l<CR>
 nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>
-nnoremap ~~ `
-
-colorscheme apprentice
-
-"fzf configs
 nnoremap <C-p> :GFiles<CR>
+inoremap ~~ `
 
-augroup filetype_Docker
-	" Delete any preconfigured commands
-	autocmd!
-	autocmd FileType Dockerfile setlocal tabstop=4 shiftwidth=4
-augroup end
+lua require'lspconfig'.elixirls.setup{cmd={"/home/spence/.config/nvim/lsp/elixir-ls/language_server.sh"}}
 
 set cc=
 hi Normal guibg=NONE ctermbg=NONE
