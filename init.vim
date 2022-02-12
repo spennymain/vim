@@ -7,9 +7,11 @@ Plug 'udalov/kotlin-vim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'elixir-editors/vim-elixir'
 call plug#end()
 
 syntax on
+filetype plugin indent on
 set encoding=utf-8
 set noerrorbells
 set tabstop=2 softtabstop=2
@@ -40,6 +42,16 @@ nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>
 nnoremap <C-p> :GFiles<CR>
 inoremap ~~ `
+
+nnoremap <silent> gD    <cmd>lua vim.lsp.buf.declaration()<CR>
+nnoremap <silent> gd    <cmd>lua vim.lsp.buf.definition()<CR>
+nnoremap <silent> K     <cmd>lua vim.lsp.buf.hover()<CR>
+nnoremap <silent> gD    <cmd>lua vim.lsp.buf.implementation()<CR>
+nnoremap <silent> <c-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
+nnoremap <silent> 1gD   <cmd>lua vim.lsp.buf.type_definition()<CR>
+nnoremap <silent> gr    <cmd>lua vim.lsp.buf.references()<CR>
+nnoremap <silent> g0    <cmd>lua vim.lsp.buf.document_symbol()<CR>
+nnoremap <silent> gW    <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
 
 lua require'lspconfig'.elixirls.setup{cmd={"/home/spence/.config/nvim/lsp/elixir-ls/language_server.sh"}}
 
