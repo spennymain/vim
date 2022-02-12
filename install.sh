@@ -10,7 +10,12 @@ cat ./keyboard.ascii
 echo -e "		      configuing nvim \n"
 DIR_NVIM="$HOME/.config/nvim"
 
-which nvim || sudo apt-get install neovim
+which nvim || curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage &&
+chmod u+x nvim.appimage &&
+./nvim.appimage
+
+ln -T ./nvim.appimage /usr/bin/nvim
+
 
 echo "folder not present...creating it if you let me"
 mkdir -p $DIR_NVIM
