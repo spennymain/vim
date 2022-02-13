@@ -1,10 +1,9 @@
 call plug#begin('~/.config/nvim/plugged')
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'romainl/apprentice'
+Plug 'sts10/vim-pink-moon'
 Plug 'jiangmiao/auto-pairs'
 Plug 'udalov/kotlin-vim'
 Plug 'neovim/nvim-lspconfig'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'elixir-editors/vim-elixir'
@@ -27,14 +26,17 @@ set incsearch
 set hidden
 set nowritebackup
 
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme='deus'
-let g:netrw_browser_split = 2 
-let g:netrw_banner = 0
-let g:netrw_winsize = 25
-colorscheme apprentice
+let g:airline#extensions#tabline#enabled =1
+let g:airline_theme='pink-moon'
+let g:netrw_browser_split=2 
+let g:netrw_banner=0
+let g:netrw_winsize=25
 
-let mapleader = " "
+set termguicolors
+colorscheme pink-moon
+set background=dark
+
+let mapleader=" "
 nnoremap <leader>w :w<CR>
 nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>l :wincmd l<CR>
@@ -53,6 +55,7 @@ nnoremap <silent> gr    <cmd>lua vim.lsp.buf.references()<CR>
 nnoremap <silent> g0    <cmd>lua vim.lsp.buf.document_symbol()<CR>
 nnoremap <silent> gW    <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
 
+let	g:deoplete#enable_at_startup=1 
 lua require'lspconfig'.elixirls.setup{cmd={"/home/spence/.config/nvim/lsp/elixir-ls/language_server.sh"}}
 
 set cc=
