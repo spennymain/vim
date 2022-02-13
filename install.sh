@@ -37,4 +37,5 @@ chmod +x $DIR_LSPS/elixir-ls/language_server.sh
 echo "grabbing iceberg colorscheme"
 curl -o $DIR_COLORS/iceberg.vim https://raw.githubusercontent.com/cocopon/iceberg.vim/master/colors/iceberg.vim
 
-echo "run :PlugInstall if necessary"
+echo "cleaning up -- run :PlugInstall if necessary"
+rm ./elixir-ls.zip
