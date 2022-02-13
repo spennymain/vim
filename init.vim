@@ -1,8 +1,6 @@
 call plug#begin('~/.config/nvim/plugged')
-Plug 'sts10/vim-pink-moon'
-Plug 'jiangmiao/auto-pairs'
-Plug 'udalov/kotlin-vim'
 Plug 'neovim/nvim-lspconfig'
+Plug 'jiangmiao/auto-pairs'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -26,14 +24,12 @@ set incsearch
 set hidden
 set nowritebackup
 
-let g:airline#extensions#tabline#enabled =1
-let g:airline_theme='pink-moon'
 let g:netrw_browser_split=2 
 let g:netrw_banner=0
 let g:netrw_winsize=25
 
 set termguicolors
-colorscheme pink-moon
+colorscheme iceberg
 set background=dark
 
 let mapleader=" "
