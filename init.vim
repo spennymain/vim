@@ -55,6 +55,7 @@ inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 let	g:deoplete#enable_at_startup=1 
 lua require'lspconfig'.elixirls.setup{cmd={"/home/spence/.config/nvim/lsp/elixir-ls/language_server.sh"}}
+lua require'lspconfig'.html.setup{init_options = { configurationSection = { "html", "css", "javascript", "svelte"}}}
 
 set cc=
 hi Normal guibg=NONE ctermbg=NONE

@@ -33,9 +33,12 @@ echo "installing your favourite lsps"
 curl -fLO https://github.com/elixir-lsp/elixir-ls/releases/latest/download/elixir-ls.zip
 unzip elixir-ls.zip -d $DIR_LSPS/elixir-ls
 chmod +x $DIR_LSPS/elixir-ls/language_server.sh
+npm i -g vscode-langservers-extracted
 
 echo "grabbing iceberg colorscheme"
 curl -o $DIR_COLORS/iceberg.vim https://raw.githubusercontent.com/cocopon/iceberg.vim/master/colors/iceberg.vim
 
 echo "cleaning up -- run :PlugInstall if necessary"
 rm ./elixir-ls.zip
+
+echo "if you encounter errors try upgrading pynvim: `pip3 install --user --upgrade pynvim`"
