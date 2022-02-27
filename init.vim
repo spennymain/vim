@@ -23,6 +23,7 @@ set undofile
 set incsearch
 set hidden
 set nowritebackup
+set expandtab
 
 let g:netrw_browser_split=2 
 let g:netrw_banner=0
@@ -53,7 +54,7 @@ nnoremap <silent> gW    <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
 
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
-let	g:deoplete#enable_at_startup=1 
+let	g:deoplee#enable_at_startup=1 
 lua require'lspconfig'.elixirls.setup{cmd={"/home/spence/.config/nvim/lsp/elixir-ls/language_server.sh"}}
 lua require'lspconfig'.html.setup{init_options = { configurationSection = { "html", "css", "javascript", "svelte"}}}
 
