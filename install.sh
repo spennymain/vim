@@ -34,6 +34,7 @@ curl -fLO https://github.com/elixir-lsp/elixir-ls/releases/latest/download/elixi
 unzip elixir-ls.zip -d $DIR_LSPS/elixir-ls
 chmod +x $DIR_LSPS/elixir-ls/language_server.sh
 npm i -g vscode-langservers-extracted
+pip3 install python-lsp-server[all]
 
 echo "grabbing iceberg colorscheme"
 curl -o $DIR_COLORS/iceberg.vim https://raw.githubusercontent.com/cocopon/iceberg.vim/master/colors/iceberg.vim

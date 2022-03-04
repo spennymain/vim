@@ -5,6 +5,7 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'elixir-editors/vim-elixir'
+Plug 'evanleck/vim-svelte', {'branch': 'main'}
 call plug#end()
 
 syntax on
@@ -55,6 +56,7 @@ nnoremap <silent> gW    <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 let	g:deoplee#enable_at_startup=1 
+lua require'lspconfig'.pylsp.setup{}
 lua require'lspconfig'.elixirls.setup{cmd={"/home/spence/.config/nvim/lsp/elixir-ls/language_server.sh"}}
 lua require'lspconfig'.html.setup{init_options = { configurationSection = { "html", "css", "javascript", "svelte"}}}
 
